@@ -1,11 +1,3 @@
-// ==============================================================================
-// Module: fft8_pipelined
-// Description: Fully Pipelined 8-Point Radix-2 Decimation-in-Frequency (DIF) FFT
-// Arithmetic: 16-bit Signed Q1.14 Fixed-Point with Stage Scaling
-// Latency: Exactly 3 clock cycles (1 cycle per butterfly stage)
-// Throughput: 1 vector per clock cycle (continuous streaming)
-// Author: Shivam Sikri
-// ==============================================================================
 
 module fft8_pipelined #(
     parameter DATA_WIDTH = 16,
@@ -112,9 +104,9 @@ module fft8_pipelined #(
         end
     end
 
-    // =========================================================================
+   
     // STAGE 2: 4 Butterflies, Distance = 2
-    // =========================================================================
+   
     wire signed [DATA_WIDTH-1:0] s2_0_re, s2_0_im, s2_2_re, s2_2_im;
     wire signed [DATA_WIDTH-1:0] s2_1_re, s2_1_im, s2_3_re, s2_3_im;
     wire signed [DATA_WIDTH-1:0] s2_4_re, s2_4_im, s2_6_re, s2_6_im;
@@ -171,9 +163,9 @@ module fft8_pipelined #(
         end
     end
 
-    // =========================================================================
+    
     // STAGE 3: 4 Butterflies, Distance = 1
-    // =========================================================================
+    
     wire signed [DATA_WIDTH-1:0] s3_0_re, s3_0_im, s3_1_re, s3_1_im;
     wire signed [DATA_WIDTH-1:0] s3_2_re, s3_2_im, s3_3_re, s3_3_im;
     wire signed [DATA_WIDTH-1:0] s3_4_re, s3_4_im, s3_5_re, s3_5_im;
@@ -203,12 +195,12 @@ module fft8_pipelined #(
         .x_re(s3_6_re), .x_im(s3_6_im), .y_re(s3_7_re), .y_im(s3_7_im)
     );
 
-    // =========================================================================
+    
     // Pipeline Register 3 & Bit-Reversal Unscrambler (Output Layer)
     // DIF outputs are bit-reversed:
     // s3_0 -> X[0], s3_1 -> X[4], s3_2 -> X[2], s3_3 -> X[6],
     // s3_4 -> X[1], s3_5 -> X[5], s3_6 -> X[3], s3_7 -> X[7]
-    // =========================================================================
+    
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             out_valid <= 1'b0;
