@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer Save File - Pipelined 8-Point Radix-2 FFT
+[*]
+[dumpfile] "fft8.vcd"
+[savefile] "wave.gtkw"
+[timestart] 0
+[size] 1600 900
+[pos] -1 -1
+*-20.000000 70000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_fft8.
+[treeopen] tb_fft8.dut.
+@200
+-=== SYSTEM CONTROL ===
+@28
+tb_fft8.clk
+tb_fft8.rst_n
+tb_fft8.in_valid
+tb_fft8.out_valid
+@200
+-
+-=== FREQUENCY OUTPUT BINS ===
+@22
+tb_fft8.X0_re[15:0]
+tb_fft8.X0_im[15:0]
+tb_fft8.X1_re[15:0]
+tb_fft8.X1_im[15:0]
+tb_fft8.X2_re[15:0]
+tb_fft8.X2_im[15:0]
+tb_fft8.X3_re[15:0]
+tb_fft8.X3_im[15:0]
+tb_fft8.X4_re[15:0]
+tb_fft8.X4_im[15:0]
+tb_fft8.X5_re[15:0]
+tb_fft8.X5_im[15:0]
+tb_fft8.X6_re[15:0]
+tb_fft8.X6_im[15:0]
+tb_fft8.X7_re[15:0]
+tb_fft8.X7_im[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

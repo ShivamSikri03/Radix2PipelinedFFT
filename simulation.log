@@ -1,0 +1,32 @@
+VCD info: dumpfile fft8.vcd opened for output.
+============================================================
+    STARTING 8-POINT PIPELINED RADIX-2 DIF FFT TEST         
+    Architecture: 3-Stage Synchronous Pipeline              
+    Precision: 16-bit Signed Q1.14 Fixed-Point              
+============================================================
+
+--- TEST 1: Constant DC Signal (x[n] = 1.0) ---
+[INFO @ 95000 ns] Output Valid Asserted! Checking DC response...
+[PASS] TEST 1: DC Energy 100% concentrated in Bin 0 (X0_re=16384, X1..7=0)
+
+--- TEST 2: Checking Unit Impulse Response ---
+[PASS] TEST 2: Flat impulse frequency response (All bins exactly 2048 / Q1.14)
+
+--- TEST 3: Checking Single-Tone Sine Wave (Bin 1) ---
+[PASS] TEST 3: Strong spectral peak cleanly detected at Bin 1 (Mag^2=268402689)
+
+============================================================
+   *** ALL 8-POINT FFT TESTS PASSED WITH ZERO ERRORS! ***   
+   Pipeline Latency: Exactly 3 Cycles                       
+   Throughput: 1 Complex Vector / Clock Cycle               
+   Waveform generated: fft8.vcd                             
+============================================================
+
+tb_fft8.v:172: $finish called at 165000 (1ps)
+============================================================
+      8-POINT RADIX-2 FFT PYTHON GOLDEN REFERENCE VERIFICATION
+============================================================
+Total Random Test Vectors Evaluated: 100
+Average Signal-to-Quantization-Noise Ratio (SQNR): 88.44 dB
+Status: EXCELLENT (>50 dB SQNR for 16-bit Q1.14 fixed-point arithmetic)
+============================================================
