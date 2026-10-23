@@ -1,9 +1,3 @@
-// ==============================================================================
-// Module: complex_butterfly
-// Description: Radix-2 Decimation-in-Frequency (DIF) Complex Butterfly Unit
-// Arithmetic: 16-bit Signed Q1.14 Fixed-Point with 1/2 Stage-Scaling and Rounding
-// Author: Shivam Sikri
-// ==============================================================================
 
 module complex_butterfly #(
     parameter DATA_WIDTH = 16,
